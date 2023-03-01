@@ -1,4 +1,5 @@
 # 모바일 웹 청첩장 프로젝트
+![image](https://user-images.githubusercontent.com/82020828/222174082-1bca036f-b8f5-4a00-a043-fbcfb8f87675.png)
 
 ## 설명 및 구동영상
 https://2un-light.tistory.com/48
