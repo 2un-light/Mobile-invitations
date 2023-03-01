@@ -15,10 +15,18 @@ https://2un-light.tistory.com/48
 
 
 ## 사용 언어
-- 
-- FE : bootstrap, HTML/CSS, javascript
-- BE : Java, Spring framework
-- DB : My SQL, Heidi SQL, 
-- API : Kakao Map
+- Java
+- SQL
+- JavaScript
+- HTML/CSS
 
+## 환경도구
+- Spring framework
+- My SQL, Heidi SQL
 
+## ECT
+- kakao map API 사용
+- bootstrap
+- w3schools
+- sweetalert3
+- Google Fonts
