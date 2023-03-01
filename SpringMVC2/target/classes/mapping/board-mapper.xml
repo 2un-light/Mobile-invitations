@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boardDao">
+<!-- 
+public void insertBoard(BoardDo bdo) {
+      System.out.println("insertBoard()(Spring JDBC) => Start !!");
+      String sql = "insert into board (title, writer, content) "
+              + "values (?,?,?)";
+      jdbcTemplate.update(sql, bdo.getTitle(), bdo.getWriter(), bdo.getContent());
+      System.out.println("insertBoard()(Spring JDBC) => End !!");
+      
+   }
+ -->
+ 
+ <insert id="insertBoard" parameterType="com.spring.boardex.impl.projectDo">
+ 	insert into board (title, writer, content) values (#{title}, #{writer}, #{content})
+ </insert>
+ 
+<!--  	public ArrayList<BoardDo> getBoardList(){	
+		System.out.println("getBoardList ()(Spring JDBC) ==> ");
+		String sql = "select * from board";
+		Object[] args = {};
+		return (ArrayList<BoardDo>)jdbcTemplate.query(sql, args, new BoardRowMapper());		
+	}
+ -->
+ 
+ <select id="getBoardList" resultType="BoardDo">
+ 	select * from board
+ </select>
+ 
+<!--  
+  public BoardDo getBoard(BoardDo bdo) {
+      System.out.println("getBoard()(Mybatis) ==> ");      
+      String sql = "select * from board where seq=?";
+      Object[] args = {bdo.getSeq()};
+      return jdbcTemplate.queryForObject(sql, args, new BoardRowMapper());
+      
+   }
+ -->
+ 
+ <select id="getBoard" parameterType="BoardDo" resultType="BoardDo">
+ 	select * from board where seq=#{seq}
+ </select>
+ 
+<!--  
+ public void updateBoard(BoardDo bdo) {      
+      System.out.println("updateBoard()(Spring JDBC) ==> ");
+      String sql = "update board set title=?, content=? where seq=?";
+      jdbcTemplate.update(sql, bdo.getTitle(), bdo.getContent(), bdo.getSeq());
+   }
+ -->
+ 
+ <update id="updateBoard" parameterType="BoardDo">
+ 	update board set title=#{title}, content=#{content} where seq=#{seq}
+ </update>
+ 
+ 
+</mapper>
