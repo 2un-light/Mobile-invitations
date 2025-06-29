@@ -7,9 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class JdbcUtil {
-	static String id="root";
-	static String password = "111111";
-	static String url = "jdbc:mysql://localhost:3306/springdb2?characterEncoding=utf-8";
+	static String id=System.getenv("DB_ID");
+	static String password = System.getenv("DB_PASSWORD");
+	static String url = System.getenv("DB_URL");
 	
 	static Connection conn=null;
 	static PreparedStatement pstmt=null;
@@ -17,11 +17,8 @@ public class JdbcUtil {
 	
 	public static Connection getConnection() {		
 		try {
-			//jdbc 드라이버 로딩	
 			Class.forName("com.mysql.jdbc.Driver");
-			//디비에 연결 
 			conn = DriverManager.getConnection(url, id, password);
-			System.out.println("MySQL 디비 연결 완료 ");
 			return conn;
 			
 		} catch (Exception e) {

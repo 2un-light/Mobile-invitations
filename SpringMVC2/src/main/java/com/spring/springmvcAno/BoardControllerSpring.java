@@ -21,7 +21,7 @@ public class BoardControllerSpring {
    @RequestMapping(value="/insertBoard.do")
    public String insertBoard() {
       System.out.println("insertBoard() ==> ");
-      //ºä¾î È£Ãâ
+      //ï¿½ï¿½ï¿½ È£ï¿½ï¿½
       return "insertBoardView";
    }
    
@@ -41,11 +41,9 @@ public class BoardControllerSpring {
    @RequestMapping(value="/getBoard.do")
    public String getBoard(projectDo pdo, Model model) {
       System.out.println("GetBoardController()(Spring JDBC) ==> ");
-      //DO¿¡ seq °ªÀÌ Á¦´ë·Î ¼³Á¤µÇ¾îÀÖ´ÂÁö È®ÀÎ¸¸ ÇÔ
       System.out.println("seq : " + pdo.getSeq());
       projectDo board = projectDaoSpring.getBoard(pdo);  
       model.addAttribute("board", board);  
-      //ÇØ´ç ¸ÅÄª °ªÀÌ ModelAndViewÀÌ±â¿¡
       return "getBoardView";
    }
       
@@ -81,7 +79,7 @@ public class BoardControllerSpring {
       return "redirect:getBoardList.do"; 
    }
    
-   // 6Àå 16p
+   // 6ï¿½ï¿½ 16p
    @RequestMapping(value="/searchBoardList.do")
    public String searchBoardList(
          @RequestParam(value="searchCon") String searchCon,
